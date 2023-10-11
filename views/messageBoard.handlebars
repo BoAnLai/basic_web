@@ -1,51 +1,58 @@
-<h1>this is message board</h1>
-<p>you can submit any message you want to the author of this web, and all the other viewer.</p>
+<h1>This is message board</h1>
+<p>you can submit any message and it will present below.</p>
 <br>
-<h2>this is all the message have been submitted</h2>
+<h3>Below are all the messages have been submitted.</h3>
+<p>Data retrieved from mongoDB Atlas with mongoose.</p>
+
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Name</th>
+      <th scope="col">Message</th>
+      <th scope="col">Time</th>
     </tr>
   </thead>
   <tbody>
+    {{#each result}}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{@index}}</th>
+
+      <td>{{name}}</td>
+      <td>{{message}}</td>
+      <td>{{createdAt}}</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    {{/each}}
   </tbody>
 </table>
+
 <br>
-<h2>this is where you can submit</h2>
-<form>
+
+{{!-- form start here --}}
+<form id="inputForm" method="POST" action="/navbar/messageBoard">
+  <h2>Submit your message</h2>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <label for="nameInput" class="form-label">Name or Email</label>
+    <input name="nameInput" type="text" class="form-control" id="nameInput" placeholder="Email if you want to get reply"
+      col="3">
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <label for="msgInput" class="form-label">Message</label>
+    <textarea name="msgInput" type="text" class="form-control" id="msgInput" rows="3"
+      placeholder="type your message here"></textarea>
   </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <p id="experiment">This is experimental p</p>
+  <button type="submit" class="btn btn-primary" id="btn">Submit</button>
 </form>
+
+<hr>
+
+<div id="showAllMsg">
+  <h5>following show all msg have been sent:</h5>
+</div>
+
+{{!-- <form action="https://google.com">
+  <input type="submit" value="Go to Google" />
+</form> --}}
+
+<script src="/javascript/messageBoard.js"></script>
