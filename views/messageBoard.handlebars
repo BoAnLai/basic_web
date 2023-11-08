@@ -16,8 +16,7 @@
   <tbody>
     {{#each result}}
     <tr>
-      <th scope="row">{{@index}}</th>
-
+      <th scope="row">{{plusOne @index}}</th>
       <td>{{name}}</td>
       <td>{{message}}</td>
       <td>{{createdAt}}</td>
@@ -41,15 +40,10 @@
     <textarea name="msgInput" type="text" class="form-control" id="msgInput" rows="3"
       placeholder="type your message here"></textarea>
   </div>
-  <p id="experiment">This is experimental p</p>
   <button type="submit" class="btn btn-primary" id="btn">Submit</button>
 </form>
 
 <hr>
-
-<div id="showAllMsg">
-  <h5>following show all msg have been sent:</h5>
-</div>
 
 {{!-- <form action="https://google.com">
   <input type="submit" value="Go to Google" />

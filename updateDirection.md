@@ -1,20 +1,25 @@
 # update direction
 
 waiting list:
-  handlebars registerHelper
+  sign in Google to write down your words
+  404 handle模組化
   修改副檔名handlebars為hbs
-  修改使用express-handlebars的寫法
-  0.check navbar :page to be exist or return error page
   2.google map api
   3.RWD調整pdf
   4.產生QR code
   5.cache 如果有人重複進入
   models/messageboars.js和public/javascript/messageBoard.js整併
+  網頁上架
   
 0.app.js
   完成動態路由 >>> done
   split navbar to a router >>> done
-  check navbar :page to be exist or return error page
+  修改使用express-handlebars的寫法，{engine}改為{create} >>> done
+  handlebars registerHelper >>> done
+  hbsHelpers模組化 >>> done
+  app.post遷移至routes/navbar.js >>> done
+  default 404 page in app.js >>> done <<<使用middleware
+  router 404 page in navbar.js >>> done <<<使用callback
 
 1.main.handlebars
   下拉式選單修正 >>> done

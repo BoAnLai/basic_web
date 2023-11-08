@@ -1,3 +1,3 @@
 # basic_web
 
-a ongoing project of web 
+a ongoing project of web
